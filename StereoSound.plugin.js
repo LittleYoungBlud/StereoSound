@@ -1,6 +1,6 @@
 /**
  * @name StereoSound
- * @version 0.0.2
+ * @version 0.0.4
  * @authorLink https://github.com/LittleYoungBlud
  * @updateUrl https://github.com/LittleYoungBlud/StereoSound/blob/main/StereoSound.plugin.js
  */
@@ -94,5 +94,5 @@ module.exports = (() => {
     })(global.ZeresPluginLibrary.buildPlugin(config));
 })();
 
-
+console.log("young blud")
 /*@end@*/

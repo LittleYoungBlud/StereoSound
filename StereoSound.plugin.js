@@ -46,7 +46,7 @@ module.exports = (() => {
           obj.audioEncoder.channels = 2;
         }
         if (obj.fec) {
-          obj.fec = false;
+          obj.fec = false; // DO NOT SET TO TRUE IT WILL BREAK STEREO
         } 
         if (obj.encodingVoiceBitRate < 510000 ) { // Discord uses Opus audio codec if you look it up yourself its max bitrate is 510kbps, 512kbps is incorrect.
                 obj.encodingVoiceBitRate = 510000 // if its over 510kbps its technically overloading and can cause unnecessary lag.

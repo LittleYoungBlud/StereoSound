@@ -48,7 +48,7 @@ module.exports = (() => {
         if (obj.fec) {
           obj.fec = false;
         } 
-        if (obj.encodingVoiceBitRate < 510000 ) { // Discord uses Opus audio encoding if you look it up yourself its max bitrate is 510kbps, 512kbps is incorrect.
+        if (obj.encodingVoiceBitRate < 510000 ) { // Discord uses Opus audio codec if you look it up yourself its max bitrate is 510kbps, 512kbps is incorrect.
                 obj.encodingVoiceBitRate = 510000 // if its over 510kbps its technically overloading and can cause unnecessary lag.
         }
         

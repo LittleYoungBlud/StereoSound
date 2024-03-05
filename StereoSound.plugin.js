@@ -66,8 +66,8 @@ module.exports = (() => {
       ) {
         if (this.settings.enableToasts) {
           Toasts.show(
-            "For this Plugin to work you must turn off Noise Suppression, Echo Cancellation and Automatic Gain Control For StereoSound.",
-            { type: "warning", timeout: 8000 }
+            "If you are seeing this you must turn off Noise Suppression, Echo Cancellation and Automatic Gain Control For StereoSound.",
+            { type: "warning", timeout: 10000 }
           );
         }
         // This would not work, noise reduction would be stuck to on

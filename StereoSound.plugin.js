@@ -1,5 +1,5 @@
 /**
- * @name StereoSoundFixed
+ * @name StereoSound
  * @version 0.0.1
  * @authorLink https://github.com/LittleYoungBlud
  * @updateUrl https://github.com/LittleYoungBlud/StereoSound/blob/main/StereoSound.plugin.js

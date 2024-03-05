@@ -1,8 +1,8 @@
 /**
- * @name StereoSound
+ * @name StereoSoundFixed
  * @version 0.0.1
  * @authorLink https://github.com/LittleYoungBlud
- * @updateUrl 
+ * @updateUrl https://github.com/LittleYoungBlud/StereoSound/blob/main/StereoSound.plugin.js
  */
 module.exports = (() => {
     const config = {"main":"index.js","info":{"name":"StereoSound","authors":[{"name":"LittleYoungBlud","discord_id":"1168698907287621713","github_username":"LittleYoungBlud"}],"authorLink":"https://github.com/LittleYoungBlud","version":"0.0.1","description":"Adds a 2 channel input sound to your Better Discord requires a stereo supported mic aka 2 channel microphone.","github":"https://github.com/LittleYoungBlud","github_raw":"https://raw.githubusercontent.com/LittleYoungBlud/StereoSound/main/StereoSound.plugin.js"},"changelog":[{"title":"Changes","items":["This plugin is originally fixed by Riolubruh i just edited some stuff."]}],"defaultConfig":[{"type":"switch","id":"enableToasts","name":"Enable Toasts","note":"Allows the plugin to warn you about voice settings","value":true}]};

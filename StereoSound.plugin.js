@@ -61,8 +61,8 @@ module.exports = (() => {
       const voiceSettingsStore = WebpackModules.getByProps("getEchoCancellation");
       if (
         voiceSettingsStore.getNoiseSuppression() ||
-        voiceSettingsStore.getAdvancedVoiceActivity ||
-        voiceSettingsStore.getAutomaticallydetermineinputsensitivity ||
+        voiceSettingsStore.getAdvancedVoiceActivity() ||
+        voiceSettingsStore.getAutomaticallydetermineinputsensitivity() ||
         voiceSettingsStore.getAutomaticGainControl() ||
         voiceSettingsStore.getEchoCancellation()
       ) {

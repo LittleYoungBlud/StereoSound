@@ -5,7 +5,7 @@
  * @updateUrl https://github.com/LittleYoungBlud/StereoSound/blob/main/StereoSound.plugin.js
  */
 module.exports = (() => {
-    const config = {"main":"index.js","info":{"name":"StereoSound","authors":[{"name":"LittleYoungBlud","discord_id":"0","github_username":"LittleYoungBlud"}],"authorLink":"https://github.com/LittleYoungBlud","version":"0.0.9","description":"Adds stereo sound to your input","github":"https://github.com/LittleYoungBlud","github_raw":"https://raw.githubusercontent.com/LittleYoungBlud/StereoSound/main/StereoSound.plugin.js"},"changelog":[{"title":"Changes","items":["Set bitrate to max and should cause less lag"]}],"defaultConfig":[{"type":"switch","id":"enableToasts","name":"Enable Toasts","note":"Allows the plugin to warn you about voice settings","value":true}]};
+    const config = {"main":"index.js","info":{"name":"StereoSound","authors":[{"name":"LittleYoungBlud","discord_id":"0","github_username":"LittleYoungBlud"}],"authorLink":"https://github.com/LittleYoungBlud","version":"0.0.9","description":"Adds stereo capabilities to your mic 2 channel micorphone required","github":"https://github.com/LittleYoungBlud","github_raw":"https://raw.githubusercontent.com/LittleYoungBlud/StereoSound/main/StereoSound.plugin.js"},"changelog":[{"title":"Changes","items":["Set bitrate to max and should cause less lag"]}],"defaultConfig":[{"type":"switch","id":"enableToasts","name":"Enable Toasts","note":"Allows the plugin to warn you about voice settings","value":true}]};
 
     return !global.ZeresPluginLibrary ? class {
         constructor() {this._config = config;}

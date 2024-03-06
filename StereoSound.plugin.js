@@ -1,11 +1,11 @@
 /**
  * @name StereoSound
- * @version 0.0.5
+ * @version 0.0.9
  * @authorLink https://github.com/LittleYoungBlud
  * @updateUrl https://github.com/LittleYoungBlud/StereoSound/blob/main/StereoSound.plugin.js
  */
 module.exports = (() => {
-    const config = {"main":"index.js","info":{"name":"StereoSound","authors":[{"name":"LittleYoungBlud","discord_id":"1168698907287621713","github_username":"LittleYoungBlud"}],"authorLink":"https://github.com/LittleYoungBlud","version":"0.0.5","description/":"Adds a 2 channel input sound to your Better Discord requires a stereo supported mic aka 2 channel microphone.","github":"https://github.com/LittleYoungBlud","github_raw":"https://raw.githubusercontent.com/LittleYoungBlud/StereoSound/main/StereoSound.plugin.js"},"changelog":[{"title":"Changes","items":["This plugin is originally made by beptve and fixed by riolubruh i just edited some stuff"]}],"defaultConfig":[{"type":"switch","id":"enableToasts","name":"Enable Toasts","note":"Allows the plugin to warn you about voice settings","value":true}]};
+    const config = {"main":"index.js","info":{"name":"StereoSound","authors":[{"name":"LittleYoungBlud","discord_id":"0","github_username":"LittleYoungBlud"}],"authorLink":"https://github.com/LittleYoungBlud","version":"0.0.9","description":"Adds stereo sound to your input","github":"https://github.com/LittleYoungBlud","github_raw":"https://raw.githubusercontent.com/LittleYoungBlud/StereoSound/main/StereoSound.plugin.js"},"changelog":[{"title":"Changes","items":["Set bitrate to max and should cause less lag"]}],"defaultConfig":[{"type":"switch","id":"enableToasts","name":"Enable Toasts","note":"Allows the plugin to warn you about voice settings","value":true}]};
 
     return !global.ZeresPluginLibrary ? class {
         constructor() {this._config = config;}
@@ -46,10 +46,10 @@ module.exports = (() => {
           obj.audioEncoder.channels = 2;
         }
         if (obj.fec) {
-          obj.fec = false; // DO NOT SET TO TRUE IT WILL BREAK STEREO
-        } 
-        if (obj.encodingVoiceBitRate < 510000 ) { // Discord uses Opus audio codec its max bitrate is 510kbps
-                obj.encodingVoiceBitRate = 510000 // if its over 510kbps its technically overloading and can cause unnecessary lag.
+          obj.fec = false;
+        }
+        if (obj.encodingVoiceBitRate < 510000 ) { // Do not put it over 510kbps it will cause problems and lag
+                obj.encodingVoiceBitRate = 510000
         }
         
         setTransportOptions.call(thisObj, obj);
@@ -61,21 +61,21 @@ module.exports = (() => {
       const voiceSettingsStore = WebpackModules.getByProps("getEchoCancellation");
       if (
         voiceSettingsStore.getNoiseSuppression() ||
+        voiceSettingsStore.getAutomaticallydetermineinputsensitivity() ||
         voiceSettingsStore.getAdvancedVoiceActivity() ||
         voiceSettingsStore.getAutomaticGainControl() ||
         voiceSettingsStore.getEchoCancellation()
       ) {
         if (this.settings.enableToasts) {
           Toasts.show(
-            "If you are seeing this you must turn off Noise Suppression, Echo Cancellation and Automatic Gain Control For StereoSound.",
-            { type: "warning", timeout: 10000 }
+            "Please disable echo cancellation, noise reduction, and noise suppression for StereoSound",
+            { type: "warning", timeout: 5000 }
           );
         }
-        // This would not work, noise reduction would be stuck to on
          const voiceSettings = WebpackModules.getByProps("setNoiseSuppression");
         // 2nd arg is for analytics
-         // For Noise Suppression it might put it to "Standard" even if its on false so maybe still manually put it to "none" in your Voice & Video settings.
          voiceSettings.setNoiseSuppression(false, {});
+         voiceSettings.setAutomaticallydetermineinputsensitivity(false,{});
          voiceSettings.setAdvancedVoiceActivity(false, {});
          voiceSettings.setAutomaticGainControl(false, {});
          voiceSettings.setEchoCancellation(false, {});

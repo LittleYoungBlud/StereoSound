@@ -62,8 +62,8 @@ module.exports = (() => {
       if (
         voiceSettingsStore.getNoiseSuppression() ||
         voiceSettingsStore.getAdvancedVoiceActivity() ||
-        voiceSettingsStore.getAutomaticallydetermineinputsensitivity() ||
-        voiceSettingsStore.getAutomaticGainControl() ||
+        voiceSettingsStore.getAutomaticallyDetermineInputSensitivity() ||
+        voiceSettingsStore.getAutomaticGainControl()
         voiceSettingsStore.getEchoCancellation()
       ) {
         if (this.settings.enableToasts) {
@@ -79,7 +79,7 @@ module.exports = (() => {
          voiceSettings.setNoiseSuppression(false, {});
          voiceSettings.setAdvancedVoiceActivity(false, {});
          voiceSettings.setEchoCancellation(false, {});
-         voiceSettings.setAutomaticallydetermineinputsensitivity(false, {});
+         voiceSettings.setAutomaticallyDetermineInputSensitivity(false, {});
          voiceSettings.setAutomaticGainControl(false, {});
         return true;
       } else return false;

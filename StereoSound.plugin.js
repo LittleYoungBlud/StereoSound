@@ -61,8 +61,6 @@ module.exports = (() => {
       const voiceSettingsStore = WebpackModules.getByProps("getEchoCancellation");
       if (
         voiceSettingsStore.getNoiseSuppression() ||
-        voiceSettingsStore.getAutomaticallydetermineinputsensitivity() ||
-        voiceSettingsStore.getAdvancedVoiceActivity() ||
         voiceSettingsStore.getAutomaticGainControl() ||
         voiceSettingsStore.getEchoCancellation()
       ) {
@@ -75,8 +73,6 @@ module.exports = (() => {
          const voiceSettings = WebpackModules.getByProps("setNoiseSuppression");
         // 2nd arg is for analytics
          voiceSettings.setNoiseSuppression(false, {});
-         voiceSettings.setAutomaticallydetermineinputsensitivity(false,{});
-         voiceSettings.setAdvancedVoiceActivity(false, {});
          voiceSettings.setAutomaticGainControl(false, {});
          voiceSettings.setEchoCancellation(false, {});
         return true;

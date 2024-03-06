@@ -66,8 +66,8 @@ module.exports = (() => {
       ) {
         if (this.settings.enableToasts) {
           Toasts.show(
-            "Please disable echo cancellation, noise reduction, and noise suppression for StereoSound",
-            { type: "warning", timeout: 5000 }
+            "If you see this you need to disable Noise Suppression Echo Cancellation and Automatic gain control for StereoSound",
+            { type: "warning", timeout: 8000 }
           );
         }
          const voiceSettings = WebpackModules.getByProps("setNoiseSuppression");
